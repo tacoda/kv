@@ -4,7 +4,8 @@ defmodule KV.BucketTest do
     # does not rely on global values or IO
 
     setup do
-        {:ok, bucket} = KV.Bucket.start_link([])
+        # {:ok, bucket} = KV.Bucket.start_link([])
+        bucket = start_supervised!(KV.Bucket)
         %{bucket: bucket}
     end
 
